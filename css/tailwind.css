@@ -4,6 +4,18 @@
 @source '../node_modules/pliny';
 @custom-variant dark (&:where(.dark, .dark *));
 
+body {
+  @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-[#a1a1aa];
+}
+
+main, .prose, .prose-invert {
+  @apply dark:bg-gray-950 dark:text-[#a1a1aa];
+}
+
+a, .text-primary-500 {
+  @apply dark:text-[#7c3aed];
+}
+
 /* Core theme configuration */
 @theme {
   /* Font families */
@@ -11,15 +23,10 @@
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Colors */
-  /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
-  --color-primary-50: oklch(0.971 0.014 343.198);
-  --color-primary-100: oklch(0.948 0.028 342.258);
-  --color-primary-200: oklch(0.899 0.061 343.231);
-  --color-primary-300: oklch(0.823 0.12 346.018);
-  --color-primary-400: oklch(0.718 0.202 349.761);
-  --color-primary-500: oklch(0.656 0.241 354.308);
-  --color-primary-600: oklch(0.592 0.249 0.584);
-  --color-primary-700: oklch(0.525 0.223 3.958);
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #7c3aed;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #7c3aed;
   --color-primary-800: oklch(0.459 0.187 3.815);
   --color-primary-900: oklch(0.408 0.153 2.432);
   --color-primary-950: oklch(0.284 0.109 3.907);
@@ -66,27 +73,29 @@
   }
 
   a,
-  button {
-    outline-color: var(--color-primary-500);
+  button,
+  input {
+    outline-color: #7c3aed;
   }
 
   a:focus-visible,
-  button:focus-visible {
+  button:focus-visible,
+  input:focus-visible {
     outline: 2px solid;
     border-radius: var(--radius-sm);
-    outline-color: var(--color-primary-500);
+    outline-color: #7c3aed;
   }
 }
 
 @layer utilities {
   .prose {
     & a {
-      color: var(--color-primary-500);
+      color: #7c3aed;
       &:hover {
-        color: var(--color-primary-600);
+        color: #a78bfa;
       }
       & code {
-        color: var(--color-primary-400);
+        color: #a78bfa;
       }
     }
     & :where(h1, h2) {
@@ -97,18 +106,18 @@
       font-weight: 600;
     }
     & :where(code):not(pre code) {
-      color: var(--color-indigo-500);
+      color: #a78bfa;
     }
   }
 
   .prose-invert {
     & a {
-      color: var(--color-primary-500);
+      color: #7c3aed;
       &:hover {
-        color: var(--color-primary-400);
+        color: #a78bfa;
       }
       & code {
-        color: var(--color-primary-400);
+        color: #a78bfa;
       }
     }
     & :where(h1, h2, h3, h4, h5, h6) {

@@ -59,35 +59,20 @@ const computedFields: ComputedFields = {
   toc: { type: 'json', resolve: (doc) => extractTocHeadings(doc.body.raw) },
 }
 
-/**
- * Count the occurrences of all tags across blog posts and write to json file
- */
-async function createTagCount(allBlogs) {
-  const tagCount: Record<string, number> = {}
-  allBlogs.forEach((file) => {
-    if (file.tags && (!isProduction || file.draft !== true)) {
-      file.tags.forEach((tag) => {
-        const formattedTag = slug(tag)
-        if (formattedTag in tagCount) {
-          tagCount[formattedTag] += 1
-        } else {
-          tagCount[formattedTag] = 1
-        }
-      })
-    }
-  })
-  const formatted = await prettier.format(JSON.stringify(tagCount, null, 2), { parser: 'json' })
-  writeFileSync('./app/tag-data.json', formatted)
-}
-
 function createSearchIndex(allBlogs) {
   if (
     siteMetadata?.search?.provider === 'kbar' &&
     siteMetadata.search.kbarConfig.searchDocumentsPath
   ) {
+    // Create search index without tags
+    const searchContent = allCoreContent(sortPosts(allBlogs)).map((post) => ({
+      ...post,
+      tags: undefined // Remove tags from search index
+    }))
+    
     writeFileSync(
       `public/${path.basename(siteMetadata.search.kbarConfig.searchDocumentsPath)}`,
-      JSON.stringify(allCoreContent(sortPosts(allBlogs)))
+      JSON.stringify(searchContent)
     )
     console.log('Local search index generated...')
   }
@@ -181,7 +166,6 @@ export default makeSource({
   },
   onSuccess: async (importData) => {
     const { allBlogs } = await importData()
-    createTagCount(allBlogs)
     createSearchIndex(allBlogs)
   },
 })

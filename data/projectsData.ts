@@ -7,20 +7,16 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
-  },
-  {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
+    title: 'The Time Machine Podcast',
+    description: `A deep dive into classic science fiction literature, exploring the themes and ideas that shaped the genre. Join us as we discuss H.G. Wells' masterpiece and its impact on modern storytelling.`,
     imgSrc: '/static/images/time-machine.jpg',
     href: '/blog/the-time-machine',
+  },
+  {
+    title: 'Canadian Adventures',
+    description: `Travel with us through the scenic landscapes of Canada, from the majestic mountains to the vibrant city of Toronto. A visual and narrative journey through one of the world's most beautiful countries.`,
+    imgSrc: '/static/images/canada/mountains.jpg',
+    href: '/blog/pictures-of-canada',
   },
 ]
 
