@@ -67,9 +67,9 @@ function createSearchIndex(allBlogs) {
     // Create search index without tags
     const searchContent = allCoreContent(sortPosts(allBlogs)).map((post) => ({
       ...post,
-      tags: undefined // Remove tags from search index
+      tags: undefined, // Remove tags from search index
     }))
-    
+
     writeFileSync(
       `public/${path.basename(siteMetadata.search.kbarConfig.searchDocumentsPath)}`,
       JSON.stringify(searchContent)

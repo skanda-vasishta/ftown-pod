@@ -23,7 +23,8 @@ const siteMetadata = {
   medium: 'https://medium.com',
   bluesky: 'https://bsky.app/',
   tiktok: 'https://www.tiktok.com/@ftownpod',
-  spotify: 'https://open.spotify.com/user/31yfneqlbjse3dykqkeisazgmk4m?si=lm33SgfITS6m1w1QwBvo0w&fbclid=PAZXh0bgNhZW0CMTEAAadGWnN9vbq3d2Llc9tZ5hz_m8hbT9nNi01aBR2ou-UgP7xGymcIG7KbPSsscQ_aem_aRfHukmuEE7f-Ktyc_KggQ&nd=1&dlsi=ef189e26ccf3473d',
+  spotify:
+    'https://open.spotify.com/user/31yfneqlbjse3dykqkeisazgmk4m?si=lm33SgfITS6m1w1QwBvo0w&fbclid=PAZXh0bgNhZW0CMTEAAadGWnN9vbq3d2Llc9tZ5hz_m8hbT9nNi01aBR2ou-UgP7xGymcIG7KbPSsscQ_aem_aRfHukmuEE7f-Ktyc_KggQ&nd=1&dlsi=ef189e26ccf3473d',
   locale: 'en-US',
   // set to true if you want a navbar fixed to the top
   stickyNav: false,

@@ -24,25 +24,25 @@ export default function Home({ posts }) {
             const { slug, date, title, summary, images } = post
             return (
               <li key={slug} className="py-8">
-                <article className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                <article className="flex flex-col items-center gap-6 md:flex-row md:items-start">
                   {post.images && post.images.length > 0 && (
                     <Image
                       src={post.images[0]}
                       alt={post.title}
                       width={320}
                       height={180}
-                      className="object-cover rounded-lg w-80 h-44 flex-shrink-0"
+                      className="h-44 w-80 flex-shrink-0 rounded-lg object-cover"
                       style={{ objectFit: 'cover', objectPosition: 'center' }}
                     />
                   )}
                   <div className="flex-1">
-                    <h2 className="text-2xl font-bold mb-2">
+                    <h2 className="mb-2 text-2xl font-bold">
                       <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                         {title}
                       </Link>
                     </h2>
                     {/* Optionally add tags here */}
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400 mb-2">
+                    <div className="prose mb-2 max-w-none text-gray-500 dark:text-gray-400">
                       {summary}
                     </div>
                     <div className="text-base leading-6 font-medium">

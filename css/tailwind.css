@@ -8,11 +8,14 @@ body {
   @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-[#a1a1aa];
 }
 
-main, .prose, .prose-invert {
+main,
+.prose,
+.prose-invert {
   @apply dark:bg-gray-950 dark:text-[#a1a1aa];
 }
 
-a, .text-primary-500 {
+a,
+.text-primary-500 {
   @apply dark:text-[#7c3aed];
 }
 
